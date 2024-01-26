@@ -1,12 +1,12 @@
 import databseConnect from './database/index.js';
 import dotenv from 'dotenv';
+import { app } from './app.js';
 
 dotenv.config(
     {
         path: './env'
     }
 )
-
 
 databseConnect()
 .then(()=>{
@@ -18,8 +18,9 @@ databseConnect()
     console.log('mongo db connection failed: ', error);
 })
 
-
-
+// app.listen(process.env.PORT || 3000, ()=>{
+//     console.log(`server is running: http:/localhost:${process.env.PORT}`)
+// })
 
 
 
